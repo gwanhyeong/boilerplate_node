@@ -5,7 +5,7 @@ module.exports = function (api) {
     [
       '@babel/preset-env',
       {
-        targets: '> 1%, not dead',
+        targets: '>= 0.25%, not dead',
       },
     ],
   ];

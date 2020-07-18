@@ -1,33 +1,10 @@
-const path = require('path');
-const WatchExternalFilesPlugin = require('webpack-watch-files-plugin').default;
+const configDevelopment = require('./webpack.config.development');
+const configProduction = require('./webpack.config.production');
 
-module.exports = {
-  mode: 'development',
-  entry: './src/app.js',
-  output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.png$|\.jpg$|\.gif$/,
-        loader: 'file-loader',
-      },
-      {
-        test: /\.css$|\.scss$|\.sass$/,
-        loader: ['style-loader', 'css-loader'],
-      },
-    ],
-  },
-  plugins: [
-    new WatchExternalFilesPlugin({
-      files: ['./src/**/*.js'],
-    }),
-  ],
+module.exports = (env, options) => {
+  if (options.mode === 'development') {
+    return configDevelopment;
+  } else if (options.mode === 'production') {
+    return configProduction;
+  }
 };

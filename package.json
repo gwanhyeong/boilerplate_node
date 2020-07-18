@@ -6,7 +6,10 @@
     "start": "webpack && node ./bin/www",
     "runall": "npm-run-all --parallel watch:build watch:server",
     "watch:build": "webpack --watch",
-    "watch:server": "nodemon ./bin/www --watch './src' './views'"
+    "watch:server": "nodemon ./bin/www --watch",
+    "build": "webpack --mode production",
+    "build-dev": "webpack --mode development",
+    "dev": "webpack-dev-server --open --mode development"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -21,12 +24,17 @@
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
     "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
+    "sass-loader": "^9.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
-    "webpack-watch-files-plugin": "^1.0.3"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
   }
 }
