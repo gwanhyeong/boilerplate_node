@@ -9,11 +9,8 @@ module.exports = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.json', '.scss', '.css'],
-    alias: {
-      components: path.resolve(__dirname, 'src/components'),
-      assets: path.resolve(__dirname, 'src/assets'),
-    },
+    extensions: ['.ts', '.tsx', '.js', '.json', '.scss', '.css'],
+    alias: require('./aliases.config').webpack,
   },
   module: {
     rules: [

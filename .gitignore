@@ -2,4 +2,7 @@
 .vscode/chrome/
 node_modules/
 
+# auto generated file
 dist/
+jsconfig.json
+.vscode/settings.json
